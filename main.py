@@ -10,7 +10,7 @@ def trade_spider(max_pages):
         plain_text = source_code.text
         soup = BeautifulSoup(plain_text)
         for link in soup.findAll({"a": "title"}):
-            href = "https://monster-book.com" + link.get("href")
+            href = "https://monster-book.com" + str(link.get("href"))
             title = link.string
             print(title)
             print(href)
